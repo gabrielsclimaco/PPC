@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  linux:
+    build: .
+    volumes:
+      - ./:/app
+    image: ubuntugpp
+    container_name: linux
