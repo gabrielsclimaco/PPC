@@ -4,24 +4,13 @@ using namespace std;
 
 int getDays (int month, int day) {
     int sum = 0;
-
-    if (month == 12) {
-        return 25 - day;
-    }
+    int a[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 25};
 
     for (int i = month; i <= 12 ; i++) {
-        if (i == 2) {
-            sum += 29;
-        } else if (i % 2 != 0 || i == 8) {
-            sum += 31;
-        } else if (i == 12) {
-            sum += 25;
-        } else {
-            sum += 30;
-        }
+       sum += a[i-1];
     }
 
-    sum -= day + 1;
+    sum -= day;
 
     return sum;
 }
