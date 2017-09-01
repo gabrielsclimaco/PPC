@@ -1,7 +1,6 @@
-FROM ubuntu
+FROM alpine:edge
 
-RUN apt-get update && \
-    apt-get install -y gcc g++ && \
+RUN apk add --no-cache gcc g++ && \
     mkdir /app
 
 ADD . /app
